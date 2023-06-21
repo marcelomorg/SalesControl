@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "6uG5Txf0REXlerDUpqVdD5d5jA+vCRwQN14RG8/qmQ5pvLvoXwlSJI6Rl/mHQYegUBL+4gkQgFEpCY8TZ+IOhg==",
+  "success": true,
+  "projectFilePath": "/home/mms/codes/c#/SalesControl/SalesControl.csproj",
+  "expectedPackageFiles": [
+    "/home/mms/.nuget/packages/microsoft.aspnetcore.app.ref/7.0.5/microsoft.aspnetcore.app.ref.7.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
