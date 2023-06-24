@@ -8,6 +8,8 @@ namespace SalesControl.Data;
 public partial class MyDbContext : DbContext
 {
     public DbSet<Sector> Sectors { get; set; }
+    public DbSet<Employee> Employees { get; set;}
+    public DbSet<Sale> Sales { get; set;}
 
     public MyDbContext()
     {
