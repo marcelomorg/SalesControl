@@ -10,6 +10,8 @@ public class SeedingService
     public SeedingService(MyDbContext context)
     {
         _context = context;
+        this.seed();
+        
     }
 
     public void seed()

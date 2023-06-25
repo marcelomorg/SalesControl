@@ -1,10 +1,10 @@
-@model IEnumerable<SalesControl.Models.Sector>
+@model IEnumerable<SalesControl.Models.Employee>
 
 @{
-    ViewData["Title"] = "Sectors";
+    ViewData["Title"] = "Employees";
 }
 
-<h2>Sectors</h2>
+<h2>Employees</h2>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -18,6 +18,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BaseSalary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sector)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -30,6 +42,18 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BaseSalary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sector.Name)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new {/*id=item.PrimaryKey*/})
