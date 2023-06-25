@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<MyDbContext>();
 builder.Services.AddTransient<EmployeesService>();
 builder.Services.AddTransient<SectorsService>();
+builder.Services.AddTransient<SalesService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
