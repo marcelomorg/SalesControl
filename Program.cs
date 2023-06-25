@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.Extensions.Options;
+using SalesControl.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
 
 var app = builder.Build();
 
@@ -15,6 +15,13 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
+
+    Console.WriteLine("You are in Production environment");
+} else
+{
+    Console.WriteLine("You are in Developement environment");
+    SeedingService seedingService = new SeedingService(new MyDbContext());
+    seedingService.seed();
 }
 
 app.UseHttpsRedirection();
