@@ -11,6 +11,7 @@ public class Employee
     public DateTime BirthDate { get; set;}
     public double BaseSalary { get; set;}
     public Sector Sector { get; set;}
+    public int SectorId { get; set;}
     public ICollection<Sale> Sales { get; set;} = new List<Sale>();
 
     public Employee()

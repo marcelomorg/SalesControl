@@ -15,4 +15,10 @@ public class EmployeesService
     {
         return _context.Employees.ToList();
     }
+
+    public void insert(Employee obj)
+    {
+        _context.Employees.Add(obj);
+        _context.SaveChanges();
+    }
 }
