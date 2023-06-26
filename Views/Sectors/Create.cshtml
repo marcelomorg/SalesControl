@@ -1,0 +1,23 @@
+@model SalesControl.Models.Sector
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr/>
+<div>
+    <div>
+        <form asp-action="Create">
+            <div>
+                <label asp-for="Name"></label>
+                <br/>
+                <input asp-for="Name"/>
+            </div>
+            <div>
+                <br/>
+                <input type="submit" value="Create">
+            </div>
+        </form>
+    </div>
+</div>

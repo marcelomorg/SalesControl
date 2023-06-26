@@ -18698,6 +18698,11 @@
       "FilePath": "/home/mms/codes/c#/SalesControl/Views/Shared/Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/mms/codes/c#/SalesControl/Views/Sectors/Create.cshtml",
+      "TargetPath": "Views\\Sectors\\Create.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.3"

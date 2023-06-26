@@ -16,4 +16,10 @@ public class SectorsService
     {
         return _context.Sectors.ToList();
     }
+
+    public void insert(Sector obj)
+    {
+        _context.Add(obj);
+        _context.SaveChanges();
+    }
 }

@@ -23,4 +23,17 @@ public class SectorsController : Controller
         list = _service.findAll();
         return View(list);
     }
+    
+    public IActionResult Create()
+    {
+        return View();
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public IActionResult Create(Sector obj)
+    {
+        _service.insert(obj);
+        return RedirectToAction(nameof(Index));
+    }
 }
