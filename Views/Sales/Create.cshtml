@@ -1,0 +1,38 @@
+@model SalesControl.Models.ViewModels.SalesFormViewModel
+
+@{
+    ViewData["Title"] = "Sales";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr/>
+<div>
+    <div>
+        <form asp-action="Create">
+            <div>
+                <label asp-for="Sale.Date"></label>
+                <br/>
+                <input asp-for="Sale.Date"/>
+            </div>
+            <div>
+                <label asp-for="Sale.Value"></label>
+                <br/>
+                <input asp-for="Sale.Value"/>
+            </div>
+            <div>
+                <label asp-for="Sale.Status"></label>
+                <br/>
+                <input asp-for="Sale.Status"/>
+            </div>
+            <div>
+                <br/>
+                <label asp-for="Sale.Employee"></label>
+                <select asp-for="Sale.EmployeeId" asp-items="@(new SelectList(Model.Employees, "Id", "Name"))"></select>
+            </div>
+            <div>
+                <br/>
+                <input type="submit" value="Create"/>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,3 +1,4 @@
+/home/mms/codes/c#/SalesControl/bin/Debug/net7.0/appsettings.Development.json
 /home/mms/codes/c#/SalesControl/bin/Debug/net7.0/appsettings.json
 /home/mms/codes/c#/SalesControl/bin/Debug/net7.0/SalesControl.staticwebassets.runtime.json
 /home/mms/codes/c#/SalesControl/bin/Debug/net7.0/SalesControl
@@ -41,4 +42,3 @@
 /home/mms/codes/c#/SalesControl/obj/Debug/net7.0/SalesControl.pdb
 /home/mms/codes/c#/SalesControl/obj/Debug/net7.0/SalesControl.genruntimeconfig.cache
 /home/mms/codes/c#/SalesControl/obj/Debug/net7.0/ref/SalesControl.dll
-/home/mms/codes/c#/SalesControl/bin/Debug/net7.0/appsettings.Development.json

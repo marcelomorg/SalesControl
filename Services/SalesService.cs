@@ -16,4 +16,10 @@ public class SalesService
     {
         return _context.Sales.ToList();
     }
+
+    public void insert(Sale sale)
+    {
+        _context.Sales.Add(sale);
+        _context.SaveChanges();
+    }
 }

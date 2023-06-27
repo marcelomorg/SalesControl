@@ -9,6 +9,7 @@ public class Sale
     public double Value { get; set;}
     public SaleStatus Status {get; set;}
     public  Employee? Employee {get; set;}
+    public int EmployeeId { get; set;}
 
     public Sale()
     {
