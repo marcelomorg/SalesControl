@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using SalesControl.Models;
 
 namespace SalesControl.Models;
@@ -8,6 +9,9 @@ public class Employee
     public int Id { get; set;}
     public string Name { get; set; }
     public string Email { get; set;}
+    
+    [DataType(DataType.Date)]
+    [Display(Name = "Birth Date")]
     public DateTime BirthDate { get; set;}
     public double BaseSalary { get; set;}
     public Sector Sector { get; set;}

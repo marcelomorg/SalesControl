@@ -24,7 +24,7 @@ namespace SalesControl.Controllers
 
         public IActionResult Index()
         {
-            var list = _employeeService.findAll();
+            var list = _employeeService.FindAll();
             return View(list);
         }
 
@@ -39,8 +39,24 @@ namespace SalesControl.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult Create(Employee employee)
         {
-            _employeeService.insert(employee);
+            _employeeService.Insert(employee);
             return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Edit(Employee employee)
+        {
+            var resultEmployee = _employeeService.FindById(employee.Id);
+            var resultSectors = _sectorService.findAll();
+            EmployeesFormViewModel result = new EmployeesFormViewModel {Employee = resultEmployee, Sectors = resultSectors};
+            return View(result);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public IActionResult EditTwo(Employee employee)
+        {
+            _employeeService.Update(employee);
+            return RedirectToAction(nameof(Index));   
         }
 
     }

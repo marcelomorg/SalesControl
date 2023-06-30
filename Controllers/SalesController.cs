@@ -25,7 +25,7 @@ public class SalesController : Controller
 
     public IActionResult Create()
     {
-        var employees = _employeesService.findAll();
+        var employees = _employeesService.FindAll();
         var viewModel = new SalesFormViewModel {Employees = employees};
         return View(viewModel);
     }

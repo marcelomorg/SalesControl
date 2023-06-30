@@ -1,4 +1,5 @@
 using System;
+using Microsoft.EntityFrameworkCore;
 using SalesControl.Data;
 using SalesControl.Models;
 
@@ -14,7 +15,7 @@ public class SalesService
 
     public List<Sale> findAll()
     {
-        return _context.Sales.ToList();
+        return _context.Sales.Include(obj => obj.Employee).ToList();
     }
 
     public void insert(Sale sale)
