@@ -1,0 +1,31 @@
+@model SalesControl.Models.Employee
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>@ViewData["Title"]</h2>
+<hr/>
+
+<div>
+    <div>
+        <label>@Html.DisplayNameFor(model => model.Name): </label>
+        @Html.DisplayFor(model => model.Name)
+    </div>
+    <div>
+        <label>@Html.DisplayNameFor(model => model.Email): </label>
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    <div>
+        <label>@Html.DisplayNameFor(model => model.BirthDate): </label>
+        @Html.DisplayFor(model => model.BirthDate)
+    </div>
+    <div>
+        <label>@Html.DisplayNameFor(model => model.BaseSalary): </label>
+        @Html.DisplayFor(model => model.BaseSalary)
+    </div>
+    <div>
+        <label>@Html.DisplayNameFor(model => model.Sector): </label>
+        @Html.DisplayFor(model => model.Sector.Name)
+    </div>
+</div>
+
