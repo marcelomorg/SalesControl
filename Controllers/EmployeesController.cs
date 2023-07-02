@@ -65,5 +65,17 @@ namespace SalesControl.Controllers
             return View(result);
         }
 
+        public IActionResult Delete(Employee employee)
+        {
+            var result = _employeeService.FindById(employee.Id);
+            return View(result);
+        }
+
+        [HttpPost]
+        public IActionResult DeleteTwo(Employee employee)
+        {
+            _employeeService.Delete(employee);
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

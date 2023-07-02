@@ -18650,6 +18650,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/mms/codes/c#/SalesControl/Views/Employees/Delete.cshtml",
+      "TargetPath": "Views\\Employees\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/mms/codes/c#/SalesControl/Views/Employees/Index.cshtml",
       "TargetPath": "Views\\Employees\\Index.cshtml",
       "FileKind": "mvc"

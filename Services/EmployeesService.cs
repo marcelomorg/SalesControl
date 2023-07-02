@@ -45,4 +45,10 @@ public class EmployeesService
         _context.Employees.Update(obj);
         _context.SaveChanges();
     }
+
+    public void Delete(Employee obj)
+    {
+        _context.Remove(obj);
+        _context.SaveChanges();
+    }
 }

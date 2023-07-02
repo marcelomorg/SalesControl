@@ -1,0 +1,49 @@
+@model SalesControl.Models.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>@ViewData["Title"]</h2>
+<hr/>
+
+<h3>Are you sure you want to delete the data below?</h3>
+
+<div>
+    <form asp-action="DeleteTwo">
+        <div>
+            <label>@Html.DisplayNameFor(model => model.Name): </label>
+            @Html.DisplayFor(model => model.Name)
+            <input type="hidden" asp-for="Name">
+            <input type="hidden" asp-for="Id">
+        </div>
+        <div>
+            <label>@Html.DisplayNameFor(model => model.Email): </label>
+            @Html.DisplayFor(model => model.Email)
+            <input type="hidden" asp-for="Email">
+        </div>
+        <div>
+            <label>@Html.DisplayNameFor(model => model.BirthDate): </label>
+            @Html.DisplayFor(model => model.BirthDate)
+            <input type="hidden" asp-for="BirthDate">
+        </div>
+        <div>
+            <label>@Html.DisplayNameFor(model => model.BaseSalary): $</label>
+            @Html.DisplayFor(model => model.BaseSalary)
+            <input type="hidden" asp-for="BaseSalary">
+        </div>
+        <div>
+            <label>@Html.DisplayNameFor(model => model.Sector): </label>
+            @Html.DisplayFor(model => model.Sector.Name)
+            <input type="hidden" asp-for="Sector">
+        </div>
+        <div>
+             <span>
+                <input type="submit" value="Yes">
+            </span>
+            <span>
+               <a asp-action="Index"><input type="button" value="No"></a>
+            </span>
+        </div>
+    </form>
+</div>
