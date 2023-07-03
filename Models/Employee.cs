@@ -12,7 +12,10 @@ public class Employee
     
     [DataType(DataType.Date)]
     [Display(Name = "Birth Date")]
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
     public DateTime BirthDate { get; set;}
+    
+    [DisplayFormat(DataFormatString = "{0:F2}")]
     public double BaseSalary { get; set;}
     public Sector Sector { get; set;}
     public int SectorId { get; set;}
