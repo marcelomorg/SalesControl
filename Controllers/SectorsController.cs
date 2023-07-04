@@ -36,4 +36,16 @@ public class SectorsController : Controller
         _service.insert(obj);
         return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Edit(Sector sector)
+    {
+        return View(sector);
+    }
+
+    [HttpPost]
+    public IActionResult EditTwo (Sector sector)
+    {
+        _service.Update(sector);
+         return RedirectToAction(nameof(Index));
+    }
 }

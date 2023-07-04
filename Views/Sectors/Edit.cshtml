@@ -1,0 +1,32 @@
+@model SalesControl.Models.Sector
+
+@{
+    ViewData["Title"]="Edit";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <form asp-action="EditTwo" method="post">
+                    <td>
+                        <input asp-for="Name" type="text" placeholder="@Html.DisplayFor(model => model.Name)"/>
+                        <input type="hidden" asp-for="Id"/>
+                    </td>
+                    <td>
+                        <input type="submit" value="Confirm"/>
+                    </td>
+                </form>
+            </tr>
+        </tbody>
+    </table>
+</div>

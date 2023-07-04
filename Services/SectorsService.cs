@@ -22,4 +22,10 @@ public class SectorsService
         _context.Add(obj);
         _context.SaveChanges();
     }
+
+    public void Update(Sector obj)
+    {
+        _context.Sectors.Update(obj);
+        _context.SaveChanges();
+    }
 }
