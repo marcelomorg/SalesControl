@@ -28,4 +28,10 @@ public class SectorsService
         _context.Sectors.Update(obj);
         _context.SaveChanges();
     }
+
+    public void Delete (Sector obj)
+    {
+        _context.Sectors.Remove(obj);
+        _context.SaveChanges();
+    }
 }

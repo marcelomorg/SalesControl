@@ -1,0 +1,27 @@
+@model SalesControl.Models.Sector
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<h2>@ViewData["Title"]</h2>
+<hr/>
+
+<h3>Do you want delete the data below?</h3>
+<form asp-action="DeleteTwo">
+    <div>
+        <label>@Html.DisplayNameFor(model => model.Id): </label>
+        @Html.DisplayFor(model => model.Id)
+        <input type="hidden" asp-for="Id">
+        
+    </div>
+    <div>
+        <label>@Html.DisplayNameFor(model => model.Name): </label>
+        @Html.DisplayFor(model => model.Name)
+        <input type="hidden" asp-for="Name"/>
+    </div>
+    <div>
+        <input type="submit" value="Yes">
+        <a asp-action="Index"><input type="button" asp-action="Index" value="No"></a>
+    </div>
+</form>
+

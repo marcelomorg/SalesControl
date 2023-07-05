@@ -48,4 +48,17 @@ public class SectorsController : Controller
         _service.Update(sector);
          return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Delete (Sector sector)
+    {
+        return View(sector);
+    }
+
+    [HttpPost]
+    public IActionResult DeleteTwo (Sector sector)
+    {
+        _service.Delete(sector);
+        return RedirectToAction(nameof(Index));
+    }
+
 }
