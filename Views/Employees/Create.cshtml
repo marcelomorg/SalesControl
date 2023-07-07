@@ -9,15 +9,18 @@
 <div>
     <form asp-action="Create">
         <div>
+            <div asp-validation-summary="All"></div>
             <div>
                 <label asp-for="Employee.Name"></label>
                 <br/>
                 <input asp-for="Employee.Name"/>
+                <span asp-validation-for="Employee.Name"></span>
             </div>
             <div>
                 <label asp-for="Employee.Email"></label>
                 <br/>
                 <input asp-for="Employee.Email"/>
+                <span asp-validation-for="Employee.Email"></span>
             </div>
             <div>
                 <label asp-for="Employee.BirthDate"></label>
@@ -28,6 +31,7 @@
                 <label asp-for="Employee.BaseSalary"></label>
                 <br/>
                 <input asp-for="Employee.BaseSalary"/>
+                <span asp-validation-for="Employee.BaseSalary"></span>
             </div>
             <div>
                 <br/>
@@ -41,3 +45,6 @@
         </div>
     </form>
 </div>
+@section Scripts{
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

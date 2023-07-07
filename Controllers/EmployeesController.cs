@@ -39,6 +39,12 @@ namespace SalesControl.Controllers
         [AutoValidateAntiforgeryToken]
         public IActionResult Create(Employee employee)
         {
+            if(!ModelState.IsValid)
+            {
+                List<Sector> sector = _sectorService.findAll();
+                EmployeesFormViewModel viewmodels = new EmployeesFormViewModel{Sectors = sector};
+                return View(viewmodels);
+            }
             _employeeService.Insert(employee);
             return RedirectToAction(nameof(Index));
         }

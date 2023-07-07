@@ -7,7 +7,13 @@ namespace SalesControl.Models;
 public class Employee
 {
     public int Id { get; set;}
+
+    [Required]
+    [StringLength(100, MinimumLength = 3, ErrorMessage = "{0} size must be between {2} and {1}")]
     public string Name { get; set; }
+
+    [Required]
+    [EmailAddress(ErrorMessage ="{0} valid is required")]
     public string Email { get; set;}
     
     [DataType(DataType.Date)]
@@ -15,6 +21,8 @@ public class Employee
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
     public DateTime BirthDate { get; set;}
     
+    [Required]
+    [Range(100, 15000, ErrorMessage = "{0} must be between of values {1} and {2} {0}")]
     [Display(Name = "Salary")]
     [DisplayFormat(DataFormatString = "{0:F2}")]
     public double BaseSalary { get; set;}
