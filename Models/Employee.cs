@@ -26,7 +26,8 @@ public class Employee
     [Display(Name = "Salary")]
     [DisplayFormat(DataFormatString = "{0:F2}")]
     public double BaseSalary { get; set;}
-    public Sector Sector { get; set;}
+    
+    public Sector? Sector { get; set;}
     public int SectorId { get; set;}
     public ICollection<Sale> Sales { get; set;} = new List<Sale>();
 

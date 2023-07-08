@@ -23,9 +23,9 @@ public class SalesController : Controller
         return View(sales);
     }
 
-    public IActionResult Create()
+    public async Task<IActionResult> CreateAsync()
     {
-        var employees = _employeesService.FindAll();
+        var employees = await _employeesService.FindAllAsync();
         var viewModel = new SalesFormViewModel {Employees = employees};
         return View(viewModel);
     }

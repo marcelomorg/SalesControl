@@ -11,31 +11,31 @@
         <div>
             <div asp-validation-summary="All"></div>
             <div>
-                <label asp-for="Employee.Name"></label>
+                <label>@Html.DisplayNameFor(model => model.Employee.Name)</label>
                 <br/>
                 <input asp-for="Employee.Name"/>
                 <span asp-validation-for="Employee.Name"></span>
             </div>
             <div>
-                <label asp-for="Employee.Email"></label>
+                <label>@Html.DisplayNameFor(model => model.Employee.Email)</label>
                 <br/>
                 <input asp-for="Employee.Email"/>
                 <span asp-validation-for="Employee.Email"></span>
             </div>
             <div>
-                <label asp-for="Employee.BirthDate"></label>
+                <label>@Html.DisplayNameFor(model => model.Employee.BirthDate)</label>
                 <br/>
                 <input asp-for="Employee.BirthDate"/>
             </div>
             <div>
-                <label asp-for="Employee.BaseSalary"></label>
+                <label>@Html.DisplayNameFor(model => model.Employee.BaseSalary)</label>
                 <br/>
                 <input asp-for="Employee.BaseSalary"/>
                 <span asp-validation-for="Employee.BaseSalary"></span>
             </div>
             <div>
                 <br/>
-                <label asp-for="Employee.Sector"></label>
+                <label>@Html.DisplayNameFor(model => model.Employee.Sector)</label>
                 <select asp-for="Employee.SectorId" asp-items="@(new SelectList(Model.Sectors, "Id", "Name"))"></select>
             </div>
             <div>

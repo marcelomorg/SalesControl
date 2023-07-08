@@ -13,14 +13,14 @@ public class EmployeesService
     {
         _context = context;
     }
-    public List<Employee> FindAll()
+    public async Task<List<Employee>> FindAllAsync()
     {
-        return _context.Employees.Include(obj => obj.Sector).ToList();
+        return await _context.Employees.Include(obj => obj.Sector).ToListAsync();
     }
 
-    public Employee FindById(int id)
+    public async Task<Employee> FindByIdAsync(int id)
     {
-        var obj = _context.Employees.Include(x => x.Sector).Where(x => x.Id == id).ToList();
+        var obj = await _context.Employees.Include(x => x.Sector).Where(x => x.Id == id).ToListAsync();
         Employee emp = new Employee();
         foreach(Employee item in obj)
         {
@@ -34,21 +34,21 @@ public class EmployeesService
         return emp;
     }
 
-    public void Insert(Employee obj)
+    public async Task InsertAsync(Employee obj)
     {
-        _context.Employees.Add(obj);
-        _context.SaveChanges();
+        await _context.Employees.AddAsync(obj);
+        await _context.SaveChangesAsync();
     }
 
-    public void Update(Employee obj)
+    public async Task UpdateAsync(Employee obj)
     {
         _context.Employees.Update(obj);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
     }
 
-    public void Delete(Employee obj)
+    public async Task DeleteAsync(Employee obj)
     {
         _context.Remove(obj);
-        _context.SaveChanges();
+        await _context.SaveChangesAsync();
     }
 }

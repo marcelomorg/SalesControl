@@ -22,9 +22,9 @@ namespace SalesControl.Controllers
             _sectorService = service1;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var list = _employeeService.FindAll();
+            var list = await _employeeService.FindAllAsync();
             return View(list);
         }
 
@@ -36,8 +36,8 @@ namespace SalesControl.Controllers
         }
 
         [HttpPost]
-        [AutoValidateAntiforgeryToken]
-        public IActionResult Create(Employee employee)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Employee employee)
         {
             if(!ModelState.IsValid)
             {
@@ -45,13 +45,13 @@ namespace SalesControl.Controllers
                 EmployeesFormViewModel viewmodels = new EmployeesFormViewModel{Sectors = sector};
                 return View(viewmodels);
             }
-            _employeeService.Insert(employee);
+            await _employeeService.InsertAsync(employee);
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Edit(Employee employee)
+        public async Task<IActionResult> Edit(Employee employee)
         {
-            var resultEmployee = _employeeService.FindById(employee.Id);
+            var resultEmployee = await _employeeService.FindByIdAsync(employee.Id);
             List<Sector> resultSectors = _sectorService.findAll();
             EmployeesFormViewModel result = new EmployeesFormViewModel {Employee = resultEmployee, Sectors = resultSectors};
             return View(result);
@@ -59,28 +59,28 @@ namespace SalesControl.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public IActionResult EditTwo(Employee employee)
+        public async Task<IActionResult> EditTwo(Employee employee)
         {
-            _employeeService.Update(employee);
+            await _employeeService.UpdateAsync(employee);
             return RedirectToAction(nameof(Index));   
         }
 
-        public IActionResult Detail(Employee employee)
+        public async Task<IActionResult> Detail(Employee employee)
         {
-            var result = _employeeService.FindById(employee.Id);
+            var result = await _employeeService.FindByIdAsync(employee.Id);
             return View(result);
         }
 
-        public IActionResult Delete(Employee employee)
+        public async Task<IActionResult> Delete(Employee employee)
         {
-            var result = _employeeService.FindById(employee.Id);
+            var result = await _employeeService.FindByIdAsync(employee.Id);
             return View(result);
         }
 
         [HttpPost]
-        public IActionResult DeleteTwo(Employee employee)
+        public async Task<IActionResult> DeleteTwo(Employee employee)
         {
-            _employeeService.Delete(employee);
+            await _employeeService.DeleteAsync(employee);
             return RedirectToAction(nameof(Index));
         }
     }
